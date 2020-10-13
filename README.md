@@ -1,2 +1,2 @@
-# beatrizpereira.github.io
+# https://beatriz-pereira.github.io/beatrizpereira.github.io/
 Site Pessoal
