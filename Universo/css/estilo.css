@@ -1,0 +1,280 @@
+/* Formataçao Geral
+*/
+/*para a imagem n entrar*/
+
+.nentra{
+	margin-top: 6%;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+.gradient{
+	background-image: linear-gradient(to bottom, #4F4F4F,black	);
+}
+#sobre{
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+.medidasol{
+	background-color:yellow;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+
+#sobre img{
+	border-radius: 12px;
+	padding: 2px;
+    border:10px solid #FF1493	;
+}
+
+#sobre h2, h4{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	
+}
+#sobre p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+#sol{
+	width:90%#terra
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#sol img{
+	padding: 2px;
+    border:10px solid 	yellow;
+}
+
+#sol h2, h4{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color: yellow;
+}
+#sol p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+}
+#mercurio{
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#mercurio img{
+	padding: 2px;
+    border:10px solid 	#1E90FF;
+}
+
+#mercurio h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color: #1E90FF;
+}
+#mercurio p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+#venus {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#venus  img{
+	padding: 2px;
+    border:10px solid 	#D2691E;
+}
+
+#venus  h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:#D2691E;
+}
+#venus  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+
+#terra {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#terra  img{
+	padding: 2px;
+    border:10px solid 	#32CD32;
+}
+
+#terra h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:#32CD32;
+}
+#terra  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+
+#marte {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#marte img{
+	padding: 2px;
+    border:10px solid 	red;
+}
+
+#marte h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:red;
+}
+#marte  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+
+#jupiter {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#jupiter img{
+	padding: 2px;
+    border:10px solid 	#FF8C00;
+}
+
+#jupiter h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:#FF8C00;
+}
+#jupiter  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+#saturno {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#saturno img{
+	padding: 2px;
+    border:10px solid 		#FFD700;
+}
+
+#saturno h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:	#FFD700;
+}
+#saturno  p{
+	margin-top: 30px;
+	font-size: 1.15em;}
+
+#urano{
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#urano img{
+	padding: 2px;
+    border:10px solid 	#40E0D0;
+}
+
+#urano h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:#40E0D0;
+}
+#urano  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
+#netuno {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#netuno img{
+	padding: 2px;
+    border:10px solid #008B8B;
+}
+
+#netuno h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:#008B8B;
+}
+#netuno  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}#lua {
+	width:90%;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: fade-right;
+
+}
+#lua img{
+	padding: 2px;
+    border:10px solid #4F4F4F;
+}
+
+#lua h2{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color: #4F4F4F;
+}
+#lua  p{
+	margin-top: 30px;
+	font-size: 1.15em;
+}
