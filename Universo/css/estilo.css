@@ -1,13 +1,26 @@
 /* Formataçao Geral
 */
 /*para a imagem n entrar*/
-
+.tabela{
+	padding: 10px;
+}
 .nentra{
 	margin-top: 6%;
 }
 
 html{
 	scroll-behavior: smooth;
+}
+#tab{
+	width: 60%;
+	text-align: : center;
+	margin-top: 20px;
+	margin-right: auto;
+	margin-left: auto;
+
+}
+.tab td, th, p{
+	color: white;
 }
 .gradient{
 	background-image: linear-gradient(to bottom, #4F4F4F,black	);
@@ -29,6 +42,89 @@ html{
 	color:black;
 }
 
+.medidamercurio{
+	background-color:#1E90FF;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidavenus{
+	background-color:#D2691E;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidaterra{
+	background-color:	#32CD32;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidamarte{
+	background-color:red;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidajupiter{
+	background-color:#FF8C00;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidasaturno{
+	background-color:#FFD700
+;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidaurano{
+	background-color:#40E0D0;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidanetuno{
+	background-color:#008B8B
+ ;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
+.medidalua{
+	background-color:#4F4F4F;
+	border-radius: 100px;
+	text-align: center;
+	padding-top: 15px;
+	padding-bottom: 15px;
+	font-size: 1.5em;
+	color:black;
+}
 #sobre img{
 	border-radius: 12px;
 	padding: 2px;
@@ -81,7 +177,7 @@ html{
     border:10px solid 	#1E90FF;
 }
 
-#mercurio h2{
+#mercurio h2, h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -104,7 +200,7 @@ html{
     border:10px solid 	#D2691E;
 }
 
-#venus  h2{
+#venus  h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -128,7 +224,7 @@ html{
     border:10px solid 	#32CD32;
 }
 
-#terra h2{
+#terra h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -152,7 +248,7 @@ html{
     border:10px solid 	red;
 }
 
-#marte h2{
+#marte h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -176,7 +272,7 @@ html{
     border:10px solid 	#FF8C00;
 }
 
-#jupiter h2{
+#jupiter h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -199,7 +295,7 @@ html{
     border:10px solid 		#FFD700;
 }
 
-#saturno h2{
+#saturno h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -222,7 +318,7 @@ html{
     border:10px solid 	#40E0D0;
 }
 
-#urano h2{
+#urano h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -245,7 +341,7 @@ html{
     border:10px solid #008B8B;
 }
 
-#netuno h2{
+#netuno h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -267,7 +363,7 @@ html{
     border:10px solid #4F4F4F;
 }
 
-#lua h2{
+#lua h2,h4{
 	margin-top: 40px;
 	margin-bottom: 40px;
 	font-family:  ;
@@ -277,4 +373,18 @@ html{
 #lua  p{
 	margin-top: 30px;
 	font-size: 1.15em;
+}
+
+#curiosidade h2, h4{
+	margin-top: 40px;
+	margin-bottom: 40px;
+	font-family:  ;
+	text-align: center;
+	color:white;
+}
+
+#curiosidade img{
+	padding: 2px;
+    border:10px solid #00BFFF;
+
 }
