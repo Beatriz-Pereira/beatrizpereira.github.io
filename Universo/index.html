@@ -27,7 +27,7 @@
       <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
        <script type="text/javascript" src="js/bootstrap.js"></script>
        <script  type="text/javascript" src="js/bootstrap.bundle.mim.js"></script>
-       <script  type="text/javascript"src="js/counter-up.mim.js"></script> 
+       <script  type="text/javascript"src="js/counterup.mim.js"></script> 
        <script type="text/javascript"src="js/jquery.min.js"></script>
        <script  type="text/javascript"src="js/jquery.waypoints.mim.js"></script>
        <script type="text/javascript" src="js/main.js"></script>
@@ -37,42 +37,48 @@
    
         <nav class="navbar sticky-top navbar-dark bg-dark">
           <b><a class="navbar-brand"  href="#">
-            <img src="img/logo4.png" width="100" height="100" class="d-inline-block align-center" alt="" loading="lazy">
+            <img src="img/logo4.png" width="100" height="100" class="d-inline-block align-center " alt="" loading="lazy">
             Universo em Cores
-             </a>
-          </b> 
+             </a></b> 
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
 
-           <ul class="nav justify-content-end">
-              <li class="nav-item active">
-                <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#sobre">Sobre</a>
-              </li>
-               <li class="nav-item dropdown">
-                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Nosso Sistema
-                  </a>
-                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                   <a class="dropdown-item" href="#sol">Sol</a>
-                            <a class="dropdown-item" href="#mercurio">Mercurio</a>
-                            <a class="dropdown-item" href="#venus">vênus</a>
-                            <a class="dropdown-item" href="#terra">Terra</a>
-                            <a class="dropdown-item" href="#marte">Marte</a>
-                            <a class="dropdown-item" href="#jupiter">Jupiter</a>
-                            <a class="dropdown-item" href="#saturno">Saturno</a>
-                            <a class="dropdown-item" href="#urano">Urano</a>
-                            <a class="dropdown-item" href="#netuno">Netuno</a>
-                    <div class="dropdown-divider"></div>
-                       <a class="dropdown-item" href="#lua">Bonûs:Lua</a>
-                       <a class="dropdown-item" href="#curiosidade">Curiosidades</a>
-                       <a class="dropdown-item" href="#indicacao">Indicações</a>
-                       <div class="dropdown-divider"></div>
-                       <a class="dropdown-item" href="#contato">Contato</a>
-                    </div>
-                </li>
-            </ul>
-          </div>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+              <ul class="nav justify-content-end">
+                  <li class="nav-item active">
+                    <a class="nav-link" href="#">Home<span class="sr-only">(current)</span></a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#sobre">Sobre</a>
+                    <li><a class="nav-link" href="Restrita/dashio/login.html">Login</a></li>
+                  </li>
+                   <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Nosso Sistema
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                       <a class="dropdown-item" href="#sol">Sol</a>
+                                <a class="dropdown-item" href="#mercurio">Mercurio</a>
+                                <a class="dropdown-item" href="#venus">vênus</a>
+                                <a class="dropdown-item" href="#terra">Terra</a>
+                                <a class="dropdown-item" href="#marte">Marte</a>
+                                <a class="dropdown-item" href="#jupiter">Jupiter</a>
+                                <a class="dropdown-item" href="#saturno">Saturno</a>
+                                <a class="dropdown-item" href="#urano">Urano</a>
+                                <a class="dropdown-item" href="#netuno">Netuno</a>
+                        <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="#lua">Bonûs:Lua</a>
+                           <a class="dropdown-item" href="#curiosidade">Curiosidades</a>
+                           <a class="dropdown-item" href="#indicacao">Indicações</a>
+                           <div class="dropdown-divider"></div>
+                           <a class="dropdown-item" href="#contato">Contato</a>
+                        </div>
+                    </li>
+                </ul>
+              </div>
+           
 
         </nav>
 
@@ -608,6 +614,16 @@
 
                 </div>
               </div>
+          </div>
+
+                        <!--Login-->
+         <div class="card text-center">
+  
+            <div class="card-body">
+              <h5 class="card-title">Conheça Nossa Comunidade</h5>
+              <p class="card-text">Faça Login no nosso site para poder ter acesso a conteudos exclusivos, compartilhar e publicar.</p>
+              <a href="Restrita/dashio/login.html" class="btn btn-primary">Login</a>
+            </div>
           </div>
                         <!--Contato-->
             
