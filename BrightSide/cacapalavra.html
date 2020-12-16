@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Caça-palavras</title>
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+<style>
+  h1{
+    color:#fff;
+    font-size:30px;
+     font-family: "Raleway", sans-serif; 
+  }
+  h2{
+    color:#757575;
+    font-size:30px;
+    font-family: "Raleway", sans-serif;
+  }
+  h1, h2,h4,li,td{
+    text-align:center;
+    font-family: "Raleway", sans-serif;
+  }
+  h4,td{
+    font-size:30px;
+    
+  }
+  h4,li{
+    color:black;
+  }
+
+  p{
+    font-size:15px;
+    margin:0;
+    font-family: "Raleway", sans-serif;
+    color: #fff;
+  }
+  body{
+    background-color:yellow;
+  }
+  #dicas{
+    overflow-y:scroll;
+    height:90%;
+    width:25%;
+    text-align: justify;
+    padding:1% 1% 2% 3%;
+    font-size:.8em;
+    position:fixed;
+    margin:0 0 0 1%;
+    top:.5%;
+    background-color: #F5F5F5;
+  }
+  #dicas li{
+    margin:.5%;
+
+  }
+  @media only screen and (max-width:639px){
+    #dicas{
+      overflow:unset;
+      height:auto;
+      margin:auto;
+      width:95%;
+      position:relative;
+    }
+  }
+  html, body{
+    margin:0;
+    padding:0;
+    background: black;
+  }
+  table{
+    width:25%;
+  }
+  table, tr, td{
+    border: 1px solid black;
+    background-color: white;
+  }
+
+  td{
+    font-weight: bold;
+    font-family: monospace;
+    font-size: 1.6em;
+    color: black;
+  }
+
+  td:hover{
+    background-color: #F9D387;
+    cursor: pointer;
+  }
+
+  .selecionada, .encontrada, .errado{
+    transition:.2s linear;
+  }
+  .selecionada{
+    background-color: lightblue;
+  }
+  .encontrada{
+    background-color: #009688;
+  }
+
+  .errado{
+    color: red;
+  }
+
+  #iniciar{
+    padding: 6%;
+    background-color:#363636;
+  }
+
+  #jogo{
+    text-align: center;
+  }
+
+  #btnPlay{
+    margin:auto;
+    display: block;
+  }
+
+  #parabens{
+    margin: auto;
+    text-align: center;
+    color: #FF5722;
+    transition: .2s linear 2s;
+    position:absolute;
+    top:50%;
+    left:0;
+    right:0;
+  }
+
+  #btnVoltar{
+    margin: auto;
+  }
+
+  button{
+    border:1px solid white;
+    outline:none;
+    background-color: #4F4F4F;
+    transition:.2s linear;
+    font-weight:bold;
+    padding:1% 2%;
+    color:white;
+  }
+
+  button:hover{
+    border:1px solid lightblue;
+    outline:none;
+    color:lightblue;
+    background-color:white;
+  }
+</style>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+<body>
+<div id="iniciar">
+  <h1>Caça-palavras</h1>
+  <button id="btnPlay">
+    <H1>JOGAR</H1>
+  </button>
+</div>
+<div id="jogo" hidden>
+  <h2 hidden id="parabens">Parabéns!</h2>
+  <button hidden id="btnVoltar">voltar</button>
+  <h2>Trovadorismo</h2>
+  <p>Ao encontrar uma palavra,</p>
+  <p> clique em sua letra inicial e em sua letra final.</p>
+  <p id="encontradas"></p>
+  <ol id="dicas">
+    <h4 style="text-align:center;">Dicas</h4>
+    <li>Nome Dado ao sofrimeito do trovador por não ter sua amada.</li>
+    <li>Palavra quedeu origem ao nome do movimento "Trovadorismo".</li>
+    <li>Canção com eu-lirico feminino.</li>
+    <li>Canção que fala mal de alguem indiretamente.</li>
+    <li>Canção que fala mal de alguem diretamente.</li>
+    <li>Nome dos tipo de musica cantada pelos trovadores.</li>
+    <li>Classe social a qual os trovadores normalmente faziam parte.</li>
+    <li>Canção que expressava o sofrimento do eu-lirico. </li>
+  
+  </ol>
+  <table id="tabuleiro" align="center">
+  <tr>
+    <td>Ã</td>
+    <td>Ê</td>
+    <td>O</td>
+    <td>O</td>  
+    <td>Ã</td>  
+    <td>O</td>  
+    <td>F</td>  
+    <td>C</td>--  
+    <td>O</td>--  
+    <td>I</td>--  
+    <td>T</td>--  
+    <td>A</td>--
+  </tr>
+  <tr>
+    <td>J</td>  
+    <td>K</td>  
+    <td>S</td>  
+    <td>Ã</td>  
+    <td>B</td>  
+    <td>D</td>  
+    <td>L</td>  
+    <td>T</td>  
+    <td>G</td>  
+    <td>W</td>  
+    <td>H</td>  
+    <td>S</td>
+  </tr>
+  <tr>  
+    <td>T</td> -- 
+    <td>R</td> -- 
+    <td>O</td> -- 
+    <td>V</td>--  
+    <td>A</td>--  
+    <td>D</td> -- 
+    <td>O</td> -- 
+    <td>R</td> -- 
+    <td>X</td>  
+    <td>Z</td>  
+    <td>E</td>  
+    <td>C</td>
+  </tr>
+  <tr>  
+    <td>H</td>  
+    <td>E</td>--  
+    <td>N</td>  
+    <td>O</td>  
+    <td>B</td>  
+    <td>R</td>  
+    <td>E</td>  
+    <td>Z</td>  
+    <td>A</td>  
+    <td>M</td>  
+    <td>L</td>  
+    <td>A</td>
+  </tr>
+  <tr>  
+    <td>N</td>  
+    <td>S</td>--  
+    <td>B</td>  
+    <td>A</td>  
+    <td>L</td>  
+    <td>Ã</td>  
+    <td>O</td>  
+    <td>L</td>  
+    <td>H</td>  
+    <td>O</td>  
+    <td>I</td>  
+    <td>R</td>
+  </tr>
+  <tr>  
+    <td>T</td>  
+    <td>C</td>--  
+    <td>O</td>  
+    <td>C</td>  
+    <td>A</td>  
+    <td>N</td>  
+    <td>T</td>  
+    <td>I</td>  
+    <td>G</td>  
+    <td>A</td>  
+    <td>C</td>  
+    <td>N</td>
+  </tr>
+  <tr>  
+    <td>R</td>  
+    <td>A</td> -- 
+    <td>Ã</td>  
+    <td>O</td>  
+    <td>J</td>  
+    <td>A</td>--  
+    <td>M</td>--  
+    <td>O</td>--  
+    <td>R</td>--  
+    <td>R</td>  
+    <td>Ó</td>  
+    <td>I</td>
+  </tr>
+  <tr>  
+    <td>A</td> -- 
+    <td>R</td> -- 
+    <td>A</td>--  
+    <td>N</td> -- 
+    <td>T</td> -- 
+    <td>I</td> -- 
+    <td>G</td> -- 
+    <td>A</td> -- 
+    <td>V</td>  
+    <td>A</td>--  
+    <td>P</td>  
+    <td>O</td>
+  </tr>
+  <tr>  
+    <td>M</td>--  
+    <td>N</td> -- 
+    <td>O</td>  
+    <td>H</td>  
+    <td>E</td>  
+    <td>L</td>  
+    <td>S</td>  
+    <td>U</td>  
+    <td>I</td>  
+    <td>M</td>--  
+    <td>T</td>  
+    <td>E</td>
+  </tr>
+  <tr>  
+    <td>I</td>--  
+    <td>I</td>--  
+    <td>M</td>  
+    <td>O</td>  
+    <td>T</td>  
+    <td>O</td>  
+    <td>C</td>  
+    <td>A</td>  
+    <td>O</td>  
+    <td>O</td>--  
+    <td>E</td>  
+    <td>T</td>
+  </tr>
+  <tr>  
+    <td>G</td>--  
+    <td>O</td>--  
+    <td>M</td>--  
+    <td>A</td>-- 
+    <td>L</td> -- 
+    <td>D</td> -- 
+    <td>I</td> -- 
+    <td>Z</td> -- 
+    <td>E</td> -- 
+    <td>R</td>--  
+    <td>C</td> 
+    <td>A</td>
+  </tr>
+  <tr>  
+    <td>O</td> -- 
+    <td>Ã</td>  
+    <td>H</td>  
+    <td>E</td>  
+    <td>L</td>  
+    <td>L</td>  
+    <td>O</td>  
+    <td>R</td>  
+    <td>I</td>  
+    <td>N</td>  
+    <td>O</td>  
+    <td>Ô</td>
+  </tr>
+</div>
+<script>
+    var t = document.getElementById("tabuleiro");
+    var transportes, primeiroclique, encontradas, data;
+    function clique(e){
+      if(transportes.length > 0){
+        if(primeiroclique == false){
+          data.colunainicial = parseInt(e.target.dataset.index);
+          data.linhainicial = parseInt(e.target.parentElement.dataset.index);
+          data.letrainicial = e.target.innerText;
+          
+          if(e.target.dataset.encontrada == "true"){
+            e.target.classList.replace("encontrada", "selecionada");
+          }else{
+            e.target.classList.add("selecionada");
+          }
+          
+          primeiroclique = true;
+        }else{
+          if(data.colunainicial != parseInt(e.target.dataset.index) && data.linhainicial != parseInt(e.target.parentElement.dataset.index)){
+            return;
+          }
+          
+          data.colunafinal = parseInt(e.target.dataset.index);
+          data.linhafinal = parseInt(e.target.parentElement.dataset.index);
+          data.letrafinal = e.target.innerText;
+          
+          if(data.colunainicial > data.colunafinal){
+            var novacolunainicial = data.colunafinal;
+            var novacolunafinal = data.colunainicial;
+            data.colunainicial = novacolunainicial;
+            data.colunafinal = novacolunafinal;
+          }
+          if(data.linhainicial > data.linhafinal){
+            var novalinhainicial = data.linhafinal;
+            var novalinhafinal = data.linhainicial;
+            data.linhainicial = novalinhainicial;
+            data.linhafinal = novalinhafinal;
+          }
+          
+          primeiroclique = false;
+          
+          if(e.target.dataset.encontrada == "true"){
+            e.target.classList.replace("encontrada", "selecionada");
+          }else{
+            e.target.classList.add("selecionada");
+          }
+          comparar(data);
+        }
+      }
+    }
+    function horizontal(fn){
+      console.log("seleção horizontal");
+      for(var i = data.colunainicial; i < data.colunafinal + 1; i++){
+        var td = t.rows[data.linhainicial].cells[i];
+        if(td.dataset.encontrada == "true"){
+          td.classList.replace("encontrada", "selecionada");
+        }else{
+          td.classList.add("selecionada");
+        }
+        fn(td);
+      }
+    }
+    function vertical(fn){
+      console.log("seleção vertical");
+      for(var i = data.linhainicial; i < data.linhafinal + 1; i++){
+        var td = t.rows[i].cells[data.colunainicial];
+        if(td.dataset.encontrada == "true"){
+          td.classList.replace("encontrada", "selecionada");
+        }else{
+          td.classList.add("selecionada");
+        }
+        fn(td);
+      }
+    }
+    function comparar(data){
+      var selecionados = {
+        palavra:"",
+        elementos:[]
+      };
+      if(data.colunainicial != data.colunafinal && data.linhainicial == data.linhafinal){
+        horizontal(function(td){
+          selecionados.palavra += td.innerText;
+          selecionados.elementos.push(td);
+        });
+      }else if(data.colunainicial == data.colunafinal && data.linhainicial != data.linhafinal){
+        vertical(function(td){
+          selecionados.palavra += td.innerText;
+          selecionados.elementos.push(td);
+        });
+      }
+      //essa linha aqui usei um operador condicional ternário que vai retorna a palavra selecionada, se ela estiver na lista,
+      //caso a palavra esteja invertida, a primeira condição vai dar falso e vai cair na segunda condicional
+      //que vai inverte a palavra e verificar de novo se tem na lista, caso sim vai retorna ela, caso, não achar mesmo invertendo, vai retorna falso
+      //isso é importante para palavras de cabeça para baixo no quebra cabeça
+      var palavraselecionada = transportes.includes(selecionados.palavra) ? selecionados.palavra : transportes.includes(selecionados.palavra.split("").reverse().join("")) ? selecionados.palavra.split("").reverse().join('') : false;
+      if(palavraselecionada){
+        transportes = transportes.filter(function(p){
+          if(palavraselecionada != p){
+            return p;
+          }
+        });
+        setTimeout(function(){
+          for(var i = 0; i < selecionados.elementos.length; i++){
+            var elemento = selecionados.elementos[i];
+            elemento.classList.replace("selecionada", "encontrada");
+            elemento.dataset.encontrada = "true";
+          }
+        }, 1000);
+        encontradas += 1;
+        document.getElementById("encontradas").innerText = "Encontradas: "+encontradas+"\n Restantes: "+ transportes.length;
+        if(transportes.length == 0){
+          setTimeout(function(){
+            document.getElementById("parabens").hidden = false;
+            document.getElementById("btnVoltar").hidden = false;
+          }, 2000);
+        }
+        data = {};
+      }else{
+        data = {};
+        setTimeout(function(){
+          for(var i = 0; i < selecionados.elementos.length; i++){
+            var elemento = selecionados.elementos[i];
+            elemento.classList.replace("selecionada", "errado");
+          }
+          setTimeout(function(){
+            for(var i = 0; i < selecionados.elementos.length; i++){
+              var elemento = selecionados.elementos[i];
+              if(elemento.dataset.encontrada == "true"){
+                elemento.classList.replace("errado", "encontrada");
+              }else{
+                elemento.classList.remove("errado");
+              }
+            }
+          }, 1000);
+        }, 1000);
+      }
+    }
+    
+function iniciaJogo(){
+      transportes=["COITA", "CANTIGA","AMOR", "ESCARNIO","AMIGO", "TROVADOR", "MALDIZER", "NOBREZA"];
+      primeiroclique = false;
+      encontradas = 0;
+      data = {};
+      document.getElementById("encontradas").innerText = "Encontradas: "+encontradas+"\n Restantes: "+ transportes.length;
+      for(var i = 0; i < t.rows.length; i++){
+        t.rows[i].id = "linha " + i;
+        t.rows[i].dataset.index = i;
+        for(var j = 0; j < t.rows[i].cells.length; j++){
+          t.rows[i].cells[j].classList = [];
+          t.rows[i].cells[j].dataset.encontrada = "false";
+          t.rows[i].cells[j].id = "coluna " + j;
+          t.rows[i].cells[j].dataset.index = j;
+          t.rows[i].cells[j].addEventListener("click", clique);
+        }
+      }
+      document.getElementById("iniciar").hidden = true;
+      document.getElementById("parabens").hidden = true;
+      document.getElementById("jogo").hidden = false;
+      document.getElementById("btnVoltar").hidden = true;
+    }
+    var btnPlay = document.getElementById("btnPlay");
+    btnPlay.onclick = function(){
+      iniciaJogo();
+    }
+    var btnVoltar = document.getElementById("btnVoltar");
+    btnVoltar.onclick = function(){
+      btnVoltar.hidden = true;
+      document.getElementById("iniciar").hidden = false;
+      document.getElementById("parabens").hidden = true;
+      document.getElementById("jogo").hidden = true;
+    }
+  </script>
+  <div class="credits">
+    <!-- All the links in the footer should remain intact. -->
+    <!-- You can delete the links only if you purchased the pro version. -->
+    <!-- Licensing information: https://bootstrapmade.com/license/ -->
+    <!-- Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/personal-free-resume-bootstrap-template/ -->
+    Designed by <a href="https://bootstrapmade.com/">BootstrapMade,</a>
+    <a href="https://www.clubedohardware.com.br/topic/1452980-jogo-de-ca%C3%A7a-palavras-usando-visual-g-e-javascript/">Club do Hardware</a>
+  </div>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/jquery/jquery.min.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="assets/vendor/counterup/counterup.min.js"></script>
+  <script src="assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/venobox/venobox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+
+</html>
