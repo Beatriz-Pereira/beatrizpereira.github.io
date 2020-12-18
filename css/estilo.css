@@ -21,7 +21,7 @@ p{
 /*cabeçalho ou barra de navegaçao*/
 .logo img{
 	border-radius: 50%;
-	padding: 2px;
+	padding:0px;
 	align-items: left;
     
 }
@@ -29,8 +29,8 @@ nav{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	background-color: 	#FF1493;
-	padding: 15px;
+	background-image: linear-gradient(to bottom, #FF1493,  #FF69B4	);
+	padding: 3px;
 
 }
 
@@ -48,13 +48,13 @@ nav ul li{
 	text-align: center;
 	width: 100%;
 	font-size: 1.4em;
-	padding: 2%
+	padding: 2%;
 
 }
 
 nav ul li a{
 	display: inline-block;
-	padding: 8px 0;
+	padding: 0px 0;
 	width: 100%;
 	text-decoration: none;
 	color: #fff;
@@ -75,7 +75,11 @@ header {
 }
 header p{
 	margin-bottom: 1em;
-	font-size:1.7em; 
+	font-size:1.7em;
+
+}
+header h1{
+	font-size:2.2em;
 }
 
 .botao{
@@ -93,17 +97,18 @@ header p{
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	background-color:#FF69B4;
+	background-color: #FF69B4;
 	color:#fff; 
 }
 #sobre h2{
-	margin-top: 15px;
+	margin-top: 10px;
 	font-size: 1.8em;
+	margin-bottom: 0px;
 }
 .foto img {
 	width: 70%;
-	border-radius: 50%;
-	padding-top: none;
+	border-radius: 25%;
+	padding-top: 0px;
 	}
 .foto {
 	float: left;
@@ -113,6 +118,7 @@ header p{
 .texto{
 	float: right;
 	width: 50%;
+	line-height: 1.5em;
 
 }
 
@@ -221,7 +227,7 @@ header p{
 #hobby h2{
 	margin-bottom: 20px;
 	margin-top: 10px;
-	font-size: 2ex;
+	font-size: 4ex;
 	text-align: center;
 }
 
@@ -246,28 +252,28 @@ header p{
 	flex-direction: column;
 	align-items: center;
 	text-align: center;
-	background-color: #FF69B4;
+	background-image: linear-gradient(to top, #FF69B4,#FFB6C1, White	);
 	width: 100%;
 }
 #contato h2{
 	margin-left: 20px;
 	margin-width:20px;
-	margin-bottom: 20px;
+	margin-bottom: 10px;
 	margin-top: 20px;
 	font-size: 2em;
 	text-align: center;
-	color: #fff;
+	color: black;
 }
 #contato > p{
-	margin-bottom: 20px;
+	margin-bottom: 30px;
 	font-size: 1.2em;
-	color: #fff;
+	color: black;
 	text-align: center;
 }
 
 #contato a{
 	text-decoration: none;
-	color:#fff;
+	color:black;
 	font-family: "Gochi hand","helvetica","arial", sans-serif;
 	text-align: center;
 }
@@ -276,8 +282,9 @@ header p{
 footer{
 	text-align: center;
 	width: 100%;
-	background-color:#FF1493;
-	color: #fff;
+	background-color:#FF1493;  
+	border-top: 2px;
+	color: Black;
 	padding-top: 20px;
 	padding-bottom: 20px; 
 }
