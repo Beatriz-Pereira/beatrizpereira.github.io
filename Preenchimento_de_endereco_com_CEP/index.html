@@ -1,0 +1,49 @@
+<html>
+    <head>
+    <title>Preenchimento por CEP</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <!-- Chama os scripts de preenchimento-->
+    <script src="js/script.js"></script>
+    <!--Chama um estilo do site-->
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    </head>
+
+    <body>
+    <div id="form">
+      <form >
+        <h1>Dados de endereço</h1>
+        <p>Site de teste de preenchimento de endereço automático usando a API da <a href="https://viacep.com.br/" target="_blanck">ViaCep</a></p>
+        <hr>
+        <div class="centro">
+
+            <label for="cep">CEP:</label>
+            <input name="cep" type="text" id="cep" value=""  maxlength="9" />
+            <label for="rua" >Logradouro:</label>
+            <input name="rua" type="text" id="rua" class="disabled" disabled="" />
+            <label>Bairro:</label>
+            <input name="bairro" type="text" id="bairro" class="disabled" disabled=""  />
+            <label>Cidade:</label>
+            <input name="cidade" type="text" id="cidade" class="disabled" disabled=""  />
+            <label>Estado:</label>
+            <input name="uf" type="text" id="uf" class="disabled" disabled="" />
+            <label>IBGE:</label>
+            <input name="ibge" type="text" id="ibge" class="disabled" disabled="" />
+            <label>DDD da região:</label>
+            <input name="ddd" type="text" id="ddd" class="disabled" disabled="" />        </div>
+        <hr>
+      </form>
+      <div class="spinner">
+          <i class="fa fa-spinner" style="font-size:30px;" aria-hidden="true"></i>
+      </div>
+      <div>
+         <button id="search" class="botao">Pesquisar</button>
+      </div>
+    </div>
+    <p id="credits">Desing por Beatriz Pereira<p>
+
+    </body>
+
+    </html>
+    
