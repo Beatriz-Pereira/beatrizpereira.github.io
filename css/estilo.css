@@ -15,7 +15,7 @@ p{
     font-family: Neucha, "PT+Serif" cursive;
 
 }
-.contaner{
+.container{
 	width: 100%;
 }
 /*cabeçalho ou barra de navegaçao*/
@@ -158,9 +158,6 @@ header h1{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 20px;
-	margin-left: 20px;
-	margin-right: 20px;
 
 }
 #competencias h2{
@@ -203,7 +200,7 @@ header h1{
 	box-shadow:0 10px 10px #666
 }
 .trab img{
-	position:relative
+	position:relative;
 }
 .trab img{
     padding: 2px;
@@ -217,10 +214,6 @@ header h1{
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	padding-top: 20px;
-	padding-left: 20px;
-	padding-right: 20px;
-	width: 100%;
 
 }
 
@@ -393,4 +386,9 @@ header{
 }
 #hobby .desenho {
 	padding: 20px;
+}
+
+.img-icon{
+	width: 60px;
+}
 }
